@@ -5,6 +5,7 @@ spring:
     password: password
   session:
     store-type: redis
+    timeout: 3600
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
     username: root
