@@ -7,6 +7,8 @@ ARG JAR_FILE=build/libs/*.jar
 
 WORKDIR /app
 
+COPY wait-for-it.sh ./
+
 COPY ${JAR_FILE} app.jar
 
 #ENTRYPOINT ["java", "-jar", "-Dspring.profiles.active=local", "app.jar"]

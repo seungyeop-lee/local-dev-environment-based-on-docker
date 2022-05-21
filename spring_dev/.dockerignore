@@ -1,2 +1,3 @@
 *
 !build/libs/
+!wait-for-it.sh

@@ -3,9 +3,9 @@ endCmd: "./cmd.sh down"
 beforeCmd:
 afterCmd: "./cmd.sh rmi"
 sets:
-  - cmd: "./cmd.sh cmd"
+  - cmd: "./cmd.sh build update"
     path: './spring_dev'
-    initCmd:
+    initCmd: "./cmd.sh build update"
     endCmd:
     excludeDir:
       - './spring_dev/.gradle'

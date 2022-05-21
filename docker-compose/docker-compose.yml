@@ -8,3 +8,27 @@ services:
       - "8080:8080"
       - "35729:35729"
       - "5005:5005"
+    working_dir: "/app"
+    entrypoint:
+      - "./wait-for-it.sh"
+      - "mariadb:3306"
+      - "-t"
+      - "0"
+      - "--"
+      - "java"
+      - "-jar"
+      - "-Dspring.profiles.active=default"
+      - "-Dspring-boot.run.jvmArguments=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005"
+      - "app.jar"
+  mariadb:
+    image: mariadb:10.6
+    volumes:
+      - ../mariadb/conf.d:/etc/mysql/conf.d
+      - ../mariadb/data:/var/lib/mysql
+      - ../mariadb/initdb.d:/docker-entrypoint-initdb.d
+    env_file: ../mariadb/.env
+    environment:
+      TZ: Asia/Seoul
+    ports:
+      - "3306:3306"
+    restart: always

@@ -23,9 +23,8 @@ case $OS in
 esac
 
 function runCommand() {
-  # up
-  if [ "$1" = "cmd" ]; then
-    $gradlew build -x test
+  # update
+  if [ "$1" = "update" ]; then
     (cd $docker_compose_dir && docker compose up $service_name --build -d)
 
   # rmi
@@ -35,6 +34,10 @@ function runCommand() {
     if [ "$imageList" != "" ]; then
       docker rmi $imageList
     fi
+
+  # build
+  elif [ "$1" = "build" ]; then
+    $gradlew build -x test
   fi
 }
 
