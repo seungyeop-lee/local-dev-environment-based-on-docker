@@ -5,21 +5,21 @@ docker_compose_dir="../docker-compose"
 service_name="spring_dev"
 
 # OS 별 gradlew 실행 파일 설정
-OS="`uname`"
+OS="$(uname)"
 case $OS in
-  'Linux')
-    OS='Linux'
-    gradlew="./gradlew"
-    ;;
-  'WindowsNT')
-    OS='Windows'
-    gradlew="gradlew.exe"
-    ;;
-  'Darwin')
-    OS='Mac'
-    gradlew="./gradlew"
-    ;;
-  *) ;;
+'Linux')
+  OS='Linux'
+  gradlew="./gradlew"
+  ;;
+'WindowsNT')
+  OS='Windows'
+  gradlew="gradlew.exe"
+  ;;
+'Darwin')
+  OS='Mac'
+  gradlew="./gradlew"
+  ;;
+*) ;;
 esac
 
 function runCommand() {
@@ -38,6 +38,10 @@ function runCommand() {
   # build
   elif [ "$1" = "build" ]; then
     $gradlew build -x test
+    status=$?
+    if [ $status != 0 ]; then
+      exit 1
+    fi
   fi
 }
 

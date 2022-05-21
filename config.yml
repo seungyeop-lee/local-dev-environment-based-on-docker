@@ -4,11 +4,11 @@ beforeCmd:
 afterCmd: "./cmd.sh rmi"
 sets:
   - cmd: "./cmd.sh build update"
-    path: './spring_dev'
+    path: "./spring_dev"
     initCmd: "./cmd.sh build update"
     endCmd:
     excludeDir:
-      - './spring_dev/.gradle'
-      - './spring_dev/build'
-      - './spring_dev/gradle'
+      - "./spring_dev/.gradle"
+      - "./spring_dev/build"
+      - "./spring_dev/gradle"
 #    waitMillisecond: 500 # default 100
