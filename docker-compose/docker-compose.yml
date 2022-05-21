@@ -1,0 +1,10 @@
+version: '3'
+services:
+  spring_dev:
+    build:
+      context: ../spring_dev
+      dockerfile: run-bootJar.Dockerfile
+    ports:
+      - "8080:8080"
+      - "35729:35729"
+      - "5005:5005"
