@@ -8,7 +8,7 @@ watch:
 	${DIRECTORY_WATCHER} -c config-watch.yml
 
 run:
-	${DIRECTORY_WATCHER} -c config-once.yml -v
+	${DIRECTORY_WATCHER} -c config-once.yml
 
 up:
 	./cmd.sh up
