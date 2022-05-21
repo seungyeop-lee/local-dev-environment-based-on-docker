@@ -1,14 +1,12 @@
 initCmd: "./cmd.sh rmi up"
 endCmd: "./cmd.sh down"
 beforeCmd:
-afterCmd: "./cmd.sh rmi"
+afterCmd:
 sets:
-  - cmd: "./cmd.sh build update"
+  - cmd:
     path: "./spring_dev"
     initCmd: "./cmd.sh build update"
     endCmd:
     excludeDir:
-      - "./spring_dev/.gradle"
-      - "./spring_dev/build"
-      - "./spring_dev/gradle"
+      - "./spring_dev"
 #    waitMillisecond: 500 # default 100
