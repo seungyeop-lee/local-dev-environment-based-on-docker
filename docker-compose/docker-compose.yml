@@ -20,6 +20,14 @@ services:
       - "-Dspring.profiles.active=default"
       - "-Dspring-boot.run.jvmArguments=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005"
       - "app.jar"
+  redis:
+    build:
+      context: ../redis
+      dockerfile: Dockerfile
+    volumes:
+      - ../redis/data:/data
+    ports:
+      - "6379:6379"
   mariadb:
     image: mariadb:10.6
     volumes:
