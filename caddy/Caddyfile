@@ -1,0 +1,7 @@
+localhost {
+    route /spring-dev/* {
+        uri strip_prefix /spring-dev
+        reverse_proxy spring_dev:8080
+    }
+    redir /spring-dev /spring-dev/
+}
