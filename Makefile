@@ -25,6 +25,7 @@ run:
 
 up:
 	(cd spring_dev && ${GRADLEW} build -x test)
+	(cd react_dev && npm run build)
 	./cmd.sh up
 
 down:

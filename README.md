@@ -5,3 +5,10 @@
 - docker
 - jdk 17
 - Makefile
+- node 16+
+
+## 확인 OS
+
+- MacOS
+- Windows WSL2
+- Windows Git Bash

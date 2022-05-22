@@ -2,7 +2,6 @@ version: '3'
 services:
   caddy:
     image: caddy:2-alpine
-    restart: unless-stopped
     ports:
       - "80:80"
       - "443:443"
@@ -11,6 +10,7 @@ services:
       - ../caddy/site:/srv
       - ../caddy/data:/data
       - ../caddy/config:/config
+    restart: unless-stopped
   spring_dev:
     build:
       context: ../spring_dev
@@ -20,10 +20,6 @@ services:
       - "35729:35729"
       - "5005:5005"
     working_dir: "/app"
-    depends_on:
-      - caddy
-      - redis
-      - mariadb
     entrypoint:
       - "./wait-for-it.sh"
       - "mariadb:3306"
@@ -43,6 +39,7 @@ services:
       - ../redis/data:/data
     ports:
       - "6379:6379"
+    restart: always
   mariadb:
     image: mariadb:10.6
     volumes:
@@ -55,3 +52,10 @@ services:
     ports:
       - "3306:3306"
     restart: always
+  react_dev:
+    build:
+      context: ../react_dev
+      dockerfile: deploy-dist.Dockerfile
+    ports:
+      - "8081:80"
+    restart: unless-stopped

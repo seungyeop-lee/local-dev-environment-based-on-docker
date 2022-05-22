@@ -4,4 +4,10 @@ localhost {
         reverse_proxy spring_dev:8080
     }
     redir /spring-dev /spring-dev/
+
+    route /react-dev/* {
+        uri strip_prefix /react-dev
+        reverse_proxy react_dev:80
+    }
+    redir /react-dev /react-dev/
 }

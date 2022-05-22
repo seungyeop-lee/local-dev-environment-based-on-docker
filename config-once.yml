@@ -9,4 +9,11 @@ sets:
     endCmd:
     excludeDir:
       - "./spring_dev"
-#    waitMillisecond: 500 # default 100
+    waitMillisecond: 1000 # default 100
+  - cmd:
+    path: "./react_dev"
+    initCmd: "bash ./cmd.sh build update"
+    endCmd:
+    excludeDir:
+      - "./react_dev"
+    waitMillisecond: 1000 # default 100
