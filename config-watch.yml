@@ -11,5 +11,7 @@ sets:
       - "./spring_dev/.gradle"
       - "./spring_dev/build"
       - "./spring_dev/gradle"
+      - "./spring_dev/out"
+      - "./spring_dev/src/main/generated"
       - "./spring_dev/src/test"
-    waitMillisecond: 1500 # default 100
+    waitMillisecond: 1000 # default 100
