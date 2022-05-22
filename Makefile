@@ -1,9 +1,16 @@
 ifeq ($(OS),Windows_NT)
-DIRECTORY_WATCHER = directory-watcher-macos-amd64.exe
-GRADLEW = gradlew.bat
+	DIRECTORY_WATCHER = directory-watcher-windows-amd64.exe
+	GRADLEW = gradlew.bat
 else
-DIRECTORY_WATCHER = ./directory-watcher-macos-amd64
-GRADLEW = ./gradlew
+	UNAME_S := $(shell uname -s)
+	ifeq ($(UNAME_S),Linux)
+		DIRECTORY_WATCHER = ./directory-watcher-linux-amd64
+		GRADLEW = ./gradlew
+	endif
+	ifeq ($(UNAME_S),Darwin)
+		DIRECTORY_WATCHER = ./directory-watcher-macos-amd64
+		GRADLEW = ./gradlew
+	endif
 endif
 
 watch:
