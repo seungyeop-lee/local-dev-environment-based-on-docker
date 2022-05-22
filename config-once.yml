@@ -1,11 +1,11 @@
-initCmd: "./cmd.sh rmi up"
-endCmd: "./cmd.sh down"
+initCmd: "bash ./cmd.sh rmi up"
+endCmd: "bash ./cmd.sh down"
 beforeCmd:
 afterCmd:
 sets:
   - cmd:
     path: "./spring_dev"
-    initCmd: "./cmd.sh build update"
+    initCmd: "bash ./cmd.sh build update"
     endCmd:
     excludeDir:
       - "./spring_dev"

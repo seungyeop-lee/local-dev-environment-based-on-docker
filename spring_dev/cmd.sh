@@ -7,17 +7,21 @@ service_name="spring_dev"
 # OS 별 gradlew 실행 파일 설정
 OS="$(uname)"
 case $OS in
-'Linux')
+Linux*)
   OS='Linux'
   gradlew="./gradlew"
   ;;
-'WindowsNT')
+WindowsNT*)
   OS='Windows'
-  gradlew="./gradlew.exe"
+  gradlew="./gradlew.bat"
   ;;
-'Darwin')
+Darwin*)
   OS='Mac'
   gradlew="./gradlew"
+  ;;
+MINGW*)
+  OS='MINGW'
+  gradlew="./gradlew.bat"
   ;;
 *) ;;
 esac
