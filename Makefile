@@ -1,10 +1,10 @@
 ifeq ($(OS),Windows_NT)
 	GRADLEW = gradlew.bat
 	ifeq ($(PROCESSOR_ARCHITECTURE),AMD64)
-		DIRECTORY_WATCHER = directory-watcher-windows-amd64.exe
+		DIRECTORY_WATCHER = ./directory-watcher-windows-amd64.exe
 	endif
 	ifeq ($(PROCESSOR_ARCHITECTURE),x86)
-		DIRECTORY_WATCHER = directory-watcher-windows-386.exe
+		DIRECTORY_WATCHER = ./directory-watcher-windows-386.exe
 	endif
 else
 	GRADLEW = ./gradlew

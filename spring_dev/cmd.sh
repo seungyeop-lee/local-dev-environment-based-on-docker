@@ -13,7 +13,7 @@ case $OS in
   ;;
 'WindowsNT')
   OS='Windows'
-  gradlew="gradlew.exe"
+  gradlew="./gradlew.exe"
   ;;
 'Darwin')
   OS='Mac'
