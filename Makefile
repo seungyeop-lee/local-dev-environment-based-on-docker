@@ -17,6 +17,9 @@ else
 	endif
 endif
 
+init:
+	(cd react_dev && ./cmd.sh init)
+
 watch:
 	${DIRECTORY_WATCHER} -c config-watch.yml
 

@@ -5,8 +5,12 @@ docker_compose_dir="../docker-compose"
 service_name="react_dev"
 
 function runCommand() {
+  # init
+  if [ "$1" = "init" ]; then
+    npm install
+
   # update
-  if [ "$1" = "update" ]; then
+  elif [ "$1" = "update" ]; then
     (cd $docker_compose_dir && docker compose up $service_name --build -d)
 
   # rmi
