@@ -1,4 +1,20 @@
-* {
+# 로컬 환경 용 (HTTPS)
+localhost {
+    route /spring-dev/* {
+        uri strip_prefix /spring-dev
+        reverse_proxy spring_dev:8080
+    }
+    redir /spring-dev /spring-dev/
+
+    route /react-dev/* {
+        uri strip_prefix /react-dev
+        reverse_proxy react_dev:80
+    }
+    redir /react-dev /react-dev/
+}
+
+# 개발 서버 배포 용 (HTTP)
+http:// {
     route /spring-dev/* {
         uri strip_prefix /spring-dev
         reverse_proxy spring_dev:8080
