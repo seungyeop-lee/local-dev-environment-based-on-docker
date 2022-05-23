@@ -24,8 +24,8 @@ run:
 	${DIRECTORY_WATCHER} -c config-once.yml
 
 up:
-	(cd spring_dev && ${GRADLEW} build -x test)
-	(cd react_dev && npm run build)
+	(cd spring_dev && ./cmd.sh build)
+	(cd react_dev && ./cmd.sh build)
 	./cmd.sh up
 
 down:

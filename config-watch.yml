@@ -1,11 +1,11 @@
-initCmd: "bash ./cmd.sh rmi up"
-endCmd: "bash ./cmd.sh down"
+initCmd: "make up"
+endCmd: "make down"
 beforeCmd:
 afterCmd: "bash ./cmd.sh rmi"
 sets:
   - cmd: "bash ./cmd.sh build update"
     path: "./spring_dev"
-    initCmd: "bash ./cmd.sh build update"
+    initCmd:
     endCmd:
     excludeDir:
       - "./spring_dev/.gradle"
@@ -17,7 +17,7 @@ sets:
     waitMillisecond: 1000 # default 100
   - cmd: "bash ./cmd.sh build update"
     path: "./react_dev"
-    initCmd: "bash ./cmd.sh build update"
+    initCmd: 
     endCmd:
     excludeDir:
       - "./react_dev/dist"
