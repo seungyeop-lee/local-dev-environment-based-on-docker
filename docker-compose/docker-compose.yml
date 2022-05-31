@@ -58,3 +58,11 @@ services:
     ports:
       - "8081:80"
     restart: unless-stopped
+  go_dev:
+    build:
+      context: ../go_dev
+      dockerfile: Dockerfile
+    ports:
+      - "8082:8080"
+      - "2345:2345"
+    restart: unless-stopped

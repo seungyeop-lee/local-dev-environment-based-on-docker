@@ -29,6 +29,7 @@ run:
 up:
 	(cd spring_dev && ./cmd.sh build)
 	(cd react_dev && ./cmd.sh build)
+	(cd go_dev && ./cmd.sh build)
 	./cmd.sh up
 
 down:

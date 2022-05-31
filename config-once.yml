@@ -17,3 +17,10 @@ sets:
     excludeDir:
       - "./react_dev"
     waitMillisecond: 1000 # default 100
+  - cmd:
+    path: "./go_dev"
+    initCmd:
+    endCmd:
+    excludeDir:
+      - "./go_dev"
+    waitMillisecond: 1000 # default 100

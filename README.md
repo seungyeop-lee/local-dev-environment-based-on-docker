@@ -6,6 +6,7 @@
 - jdk 17
 - Makefile
 - node 16+
+- golang 1.18+
 
 ## 확인 OS
 

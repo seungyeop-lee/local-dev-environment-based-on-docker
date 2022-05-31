@@ -23,3 +23,10 @@ sets:
       - "./react_dev/dist"
       - "./react_dev/node_modules"
     waitMillisecond: 1000 # default 100
+  - cmd: "bash ./cmd.sh build update"
+    path: "./go_dev"
+    initCmd:
+    endCmd:
+    excludeDir:
+      - "./go_dev/build"
+    waitMillisecond: 1000 # default 100
