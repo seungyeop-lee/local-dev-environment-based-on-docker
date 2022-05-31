@@ -19,6 +19,7 @@ endif
 
 init:
 	(cd react_dev && ./cmd.sh init)
+	(cd angular_dev && ./cmd.sh init)
 
 watch:
 	${DIRECTORY_WATCHER} -c config-watch.yml
@@ -30,6 +31,7 @@ up:
 	(cd spring_dev && ./cmd.sh build)
 	(cd react_dev && ./cmd.sh build)
 	(cd go_dev && ./cmd.sh build)
+	(cd angular_dev && ./cmd.sh build)
 	./cmd.sh up
 
 down:

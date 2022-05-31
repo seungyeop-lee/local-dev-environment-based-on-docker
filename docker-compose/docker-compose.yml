@@ -66,3 +66,10 @@ services:
       - "8082:8080"
       - "2345:2345"
     restart: unless-stopped
+  angular_dev:
+    build:
+      context: ../angular_dev
+      dockerfile: deploy-dist.Dockerfile
+    ports:
+      - "8083:80"
+    restart: unless-stopped

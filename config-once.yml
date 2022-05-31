@@ -24,3 +24,10 @@ sets:
     excludeDir:
       - "./go_dev"
     waitMillisecond: 1000 # default 100
+  - cmd:
+    path: "./angular_dev"
+    initCmd:
+    endCmd:
+    excludeDir:
+      - "./angular_dev"
+    waitMillisecond: 1000 # default 100

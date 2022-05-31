@@ -30,3 +30,12 @@ sets:
     excludeDir:
       - "./go_dev/build"
     waitMillisecond: 1000 # default 100
+  - cmd: "bash ./cmd.sh build update"
+    path: "./angular_dev"
+    initCmd:
+    endCmd:
+    excludeDir:
+      - "./angular_dev/dist"
+      - "./angular_dev/node_modules"
+      - "./angular_dev/.angular"
+    waitMillisecond: 1000 # default 100

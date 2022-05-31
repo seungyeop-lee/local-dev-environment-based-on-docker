@@ -7,6 +7,7 @@
 - Makefile
 - node 16+
 - golang 1.18+
+- angular 13
 
 ## 확인 OS
 
