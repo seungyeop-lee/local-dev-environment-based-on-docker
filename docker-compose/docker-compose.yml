@@ -17,7 +17,6 @@ services:
       dockerfile: run-bootJar.Dockerfile
     ports:
       - "8080:8080"
-      - "35729:35729"
       - "5005:5005"
     working_dir: "/app"
     entrypoint:
