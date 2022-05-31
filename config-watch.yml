@@ -15,13 +15,20 @@ sets:
       - "./spring_dev/src/main/generated"
       - "./spring_dev/src/test"
     waitMillisecond: 1000 # default 100
-  - cmd: "bash ./cmd.sh build update"
+  - cmd:
     path: "./react_dev"
-    initCmd: 
+    initCmd: "bash ./cmd.sh watch"
     endCmd:
     excludeDir:
-      - "./react_dev/dist"
+      - "./react_dev"
+    waitMillisecond: 1000 # default 100
+  - cmd: "bash ./cmd.sh update"
+    path: "./react_dev"
+    initCmd:
+    endCmd:
+    excludeDir:
       - "./react_dev/node_modules"
+      - "./react_dev/src"
     waitMillisecond: 1000 # default 100
   - cmd: "bash ./cmd.sh build update"
     path: "./go_dev"
