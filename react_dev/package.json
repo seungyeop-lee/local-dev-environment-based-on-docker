@@ -4,9 +4,9 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build --base /react-dev",
+    "build": "tsc && vite build --base /react-dev/",
     "preview": "vite preview",
-    "watch-build": "vite build --watch --base /react-dev"
+    "watch-build": "vite build --watch --base /react-dev/"
   },
   "dependencies": {
     "react": "^18.0.0",
