@@ -6,7 +6,7 @@ RUN go install github.com/go-delve/delve/cmd/dlv@latest
 
 FROM alpine:3
 
-RUN apk add --no-cache git make build-base
+RUN apk add --no-cache build-base
 
 WORKDIR /app
 
