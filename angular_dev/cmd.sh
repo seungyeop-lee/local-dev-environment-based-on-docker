@@ -28,6 +28,14 @@ function runCommand() {
     if [ $status != 0 ]; then
       exit 1
     fi
+
+  # watch
+    elif [ "$1" = "watch" ]; then
+      npm run watch
+      status=$?
+      if [ $status != 0 ]; then
+        exit 1
+      fi
   fi
 }
 
