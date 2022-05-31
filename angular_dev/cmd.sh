@@ -23,7 +23,7 @@ function runCommand() {
 
   # build
   elif [ "$1" = "build" ]; then
-    ng build -c development
+    npm run dev-build
     status=$?
     if [ $status != 0 ]; then
       exit 1

@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "dev-build": "ng build -c development"
+    "dev-build": "ng build -c development --base-href /angular-dev --deploy-url /angular-dev/"
   },
   "private": true,
   "dependencies": {
