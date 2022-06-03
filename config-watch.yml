@@ -23,10 +23,12 @@ sets:
     waitMillisecond: 1000 # default 100
   - cmd: "bash ./cmd.sh build update"
     path: "go_dev"
-    initCmd:
-    endCmd:
     excludeDir:
       - ".go_dev/build"
+    excludeSuffix:
+      - "_test.go"
+      - "_test.go~"
+    waitMillisecond: 1000 # default 100
   - path: "angular_dev"
     initCmd: "bash ./cmd.sh watch"
     excludeDir:
