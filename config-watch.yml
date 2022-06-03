@@ -2,39 +2,39 @@ initCmd: "make up"
 endCmd: "make down"
 beforeCmd:
 afterCmd:
-  cmd: "bash ./cmd.sh rmi"
+  cmd: "bash cmd.sh rmi"
   dir: ""
 sets:
   - cmd:
-      cmd: "bash ./cmd.sh build update"
+      cmd: "bash cmd.sh build update"
       dir: "spring_dev"
     path: "spring_dev/src/main"
     excludeDir:
       - "spring_dev/src/main/generated"
     waitMillisecond: 1000 # default 100
   - path: "react_dev"
-    initCmd: "bash ./cmd.sh watch"
+    initCmd: "bash cmd.sh watch"
     excludeDir:
       - "react_dev"
   - cmd:
-      cmd: "bash ./cmd.sh update"
+      cmd: "bash cmd.sh update"
       dir: "react_dev"
     path: "react_dev/dist"
     waitMillisecond: 1000 # default 100
-  - cmd: "bash ./cmd.sh build update"
+  - cmd: "bash cmd.sh build update"
     path: "go_dev"
     excludeDir:
-      - ".go_dev/build"
+      - "go_dev/build"
     excludeSuffix:
       - "_test.go"
       - "_test.go~"
     waitMillisecond: 1000 # default 100
   - path: "angular_dev"
-    initCmd: "bash ./cmd.sh watch"
+    initCmd: "bash cmd.sh watch"
     excludeDir:
-      - "./angular_dev"
+      - "angular_dev"
   - cmd:
-      cmd: "bash ./cmd.sh update"
+      cmd: "bash cmd.sh update"
       dir: "angular_dev"
     path: "angular_dev/dist"
     waitMillisecond: 1000 # default 100
