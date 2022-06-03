@@ -1,55 +1,38 @@
 initCmd: "make up"
 endCmd: "make down"
 beforeCmd:
-afterCmd: "bash ./cmd.sh rmi"
+afterCmd:
+  cmd: "bash ./cmd.sh rmi"
+  dir: ""
 sets:
-  - cmd: "bash ./cmd.sh build update"
-    path: "./spring_dev"
-    initCmd:
-    endCmd:
-    excludeDir:
-      - "./spring_dev/.gradle"
-      - "./spring_dev/build"
-      - "./spring_dev/gradle"
-      - "./spring_dev/out"
-      - "./spring_dev/src/main/generated"
-      - "./spring_dev/src/test"
-    waitMillisecond: 1000 # default 100
   - cmd:
-    path: "./react_dev"
-    initCmd: "bash ./cmd.sh watch"
-    endCmd:
+      cmd: "bash ./cmd.sh build update"
+      dir: "spring_dev"
+    path: "spring_dev/src/main"
     excludeDir:
-      - "./react_dev"
+      - "spring_dev/src/main/generated"
     waitMillisecond: 1000 # default 100
-  - cmd: "bash ./cmd.sh update"
-    path: "./react_dev"
-    initCmd:
-    endCmd:
+  - path: "react_dev"
+    initCmd: "bash ./cmd.sh watch"
     excludeDir:
-      - "./react_dev/node_modules"
-      - "./react_dev/src"
+      - "react_dev"
+  - cmd:
+      cmd: "bash ./cmd.sh update"
+      dir: "react_dev"
+    path: "react_dev/dist"
     waitMillisecond: 1000 # default 100
   - cmd: "bash ./cmd.sh build update"
-    path: "./go_dev"
+    path: "go_dev"
     initCmd:
     endCmd:
     excludeDir:
-      - "./go_dev/build"
-    waitMillisecond: 1000 # default 100
-  - cmd:
-    path: "./angular_dev"
+      - ".go_dev/build"
+  - path: "angular_dev"
     initCmd: "bash ./cmd.sh watch"
-    endCmd:
     excludeDir:
       - "./angular_dev"
-    waitMillisecond: 1000 # default 100
-  - cmd: "bash ./cmd.sh update"
-    path: "./angular_dev"
-    initCmd:
-    endCmd:
-    excludeDir:
-      - "./angular_dev/node_modules"
-      - "./angular_dev/.angular"
-      - "./angular_dev/src"
+  - cmd:
+      cmd: "bash ./cmd.sh update"
+      dir: "angular_dev"
+    path: "angular_dev/dist"
     waitMillisecond: 1000 # default 100
