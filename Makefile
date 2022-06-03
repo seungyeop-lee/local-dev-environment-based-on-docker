@@ -17,16 +17,20 @@ else
 	endif
 endif
 
+.PHONY:init
 init:
 	(cd react_dev && ./cmd.sh init)
 	(cd angular_dev && ./cmd.sh init)
 
+.PHONY:watch
 watch:
-	${DIRECTORY_WATCHER} -c config-watch.yml
+	${DIRECTORY_WATCHER} -c config-watch.yml -d
 
+.PHONY:run
 run:
 	${DIRECTORY_WATCHER} -c config-once.yml
 
+.PHONY:up
 up:
 	(cd spring_dev && ./cmd.sh build)
 	(cd react_dev && ./cmd.sh build)
@@ -34,8 +38,10 @@ up:
 	(cd angular_dev && ./cmd.sh build)
 	./cmd.sh up
 
+.PHONY:down
 down:
 	./cmd.sh down
 
+.PHONY:log
 log:
 	./cmd.sh log
