@@ -24,7 +24,7 @@ init:
 
 .PHONY:watch
 watch:
-	${DIRECTORY_WATCHER} -c config-watch.yml -d
+	${DIRECTORY_WATCHER} -c config-watch.yml
 
 .PHONY:run
 run:
