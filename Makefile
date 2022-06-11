@@ -10,7 +10,14 @@ else
 	GRADLEW = ./gradlew
 	UNAME_S := $(shell uname -s)
 	ifeq ($(UNAME_S),Linux)
-		DIRECTORY_WATCHER = ./directory-watcher-linux-amd64
+		UNAME_M := $(shell uname -m)
+		ifeq ($(UNAME_M),aarch64)
+			DIRECTORY_WATCHER = ./directory-watcher-linux-arm64
+		else ifeq ($(UNAME_M),arm64)
+			DIRECTORY_WATCHER = ./directory-watcher-linux-arm64
+		else
+			DIRECTORY_WATCHER = ./directory-watcher-linux-amd64
+		endif
 	endif
 	ifeq ($(UNAME_S),Darwin)
 		DIRECTORY_WATCHER = ./directory-watcher-macos-amd64
