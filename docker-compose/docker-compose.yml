@@ -10,7 +10,8 @@ services:
       - ../caddy/site:/srv
       - ../caddy/data:/data
       - ../caddy/config:/config
-    restart: unless-stopped
+    command: caddy run -watch -config /etc/caddy/Caddyfile
+    restart: on-failure
   spring_dev:
     build:
       context: ../spring_dev
