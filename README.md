@@ -27,14 +27,17 @@ $ bash cmd.sh init
 ```bash
 # MacOS
 $ ./directory-watcher/directory-watcher-macos-amd64 -c config-run.yml
+# Ctrl + C 로 종료
 ```
 ```bash
 # WSL2
 $ ./directory-watcher/directory-watcher-linux-amd64 -c config-run.yml
+# Ctrl + C 로 종료
 ```
 ```bash
 # Git Bash
 $ ./directory-watcher/directory-watcher-windows-amd64.exe -c config-run.yml
+# Ctrl + C 로 종료
 ```
 
 ### 2. 실행 - 감시모드
@@ -42,21 +45,31 @@ $ ./directory-watcher/directory-watcher-windows-amd64.exe -c config-run.yml
 ```bash
 # MacOS
 $ ./directory-watcher/directory-watcher-macos-amd64 -c config-watch.yml
+# Ctrl + C 로 종료
 ```
 ```bash
 # WSL2
 $ ./directory-watcher/directory-watcher-linux-amd64 -c config-watch.yml
+# Ctrl + C 로 종료
 ```
 ```bash
 # Git Bash
 $ ./directory-watcher/directory-watcher-windows-amd64.exe -c config-watch.yml
+# Ctrl + C 로 종료
 ```
 
 ### 3. 컨테이너 내부 로그 확인
 
 ```bash
 $ bash cmd.sh log
+# Ctrl + C 로 종료
 ```
+
+### 4. 테스트 Endpoint
+
+- react: https://localhost/react-dev
+- spring: https://localhost/spring-dev/hello-view/world 
+- golang: https://localhost/go-dev/ping 
 
 ## 확인 OS
 
