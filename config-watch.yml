@@ -46,18 +46,3 @@ watchTargets:
         - "_test.go"
         - "_test.go~"
       waitMillisecond: 1000 # default 100
-  # angular
-  - path: 'angular_dev'
-    lifeCycle:
-      onStartWatch:
-        - "bash cmd.sh watch"
-    option:
-      excludeDir:
-        - "angular_dev"
-  - path: "angular_dev/dist"
-    lifeCycle:
-      onChange:
-        - cmd: "bash cmd.sh update"
-          dir: "angular_dev"
-    option:
-      waitMillisecond: 1000 # default 100

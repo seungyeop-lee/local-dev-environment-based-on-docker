@@ -17,12 +17,6 @@ localhost {
         reverse_proxy go_dev:8080
     }
     redir /go-dev /go-dev/
-
-    route /angular-dev/* {
-        uri strip_prefix /angular-dev
-        reverse_proxy angular_dev:80
-    }
-    redir /angular-dev /angular-dev/
 }
 
 # 개발 서버 배포 용 (HTTP)
@@ -44,10 +38,4 @@ http:// {
         reverse_proxy go_dev:8080
     }
     redir /go-dev /go-dev/
-
-    route /angular-dev/* {
-        uri strip_prefix /angular-dev
-        reverse_proxy angular_dev:80
-    }
-    redir /angular-dev /angular-dev/
 }
