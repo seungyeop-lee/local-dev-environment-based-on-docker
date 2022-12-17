@@ -1,5 +1,3 @@
-#FROM eclipse-temurin:17
-
 # jre 버전 (실행확인 완료)
 FROM eclipse-temurin:17-jre
 
