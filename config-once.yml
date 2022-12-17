@@ -1,2 +1,6 @@
-initCmd: "make up"
-endCmd: "make down"
+global:
+  lifeCycle:
+    onStartWatch:
+      - "make up"
+    onFinishWatch:
+      - "make down"

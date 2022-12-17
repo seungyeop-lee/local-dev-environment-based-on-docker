@@ -1,40 +1,63 @@
-initCmd: "make up"
-endCmd: "make down"
-beforeCmd:
-afterCmd:
-  cmd: "bash cmd.sh rmi"
-  dir: ""
-sets:
-  - cmd:
-      cmd: "bash cmd.sh build update"
-      dir: "spring_dev"
-    path: "spring_dev/src/main"
-    excludeDir:
-      - "spring_dev/src/main/generated"
-    waitMillisecond: 1000 # default 100
-  - path: "react_dev"
-    initCmd: "bash cmd.sh watch"
-    excludeDir:
-      - "react_dev"
-  - cmd:
-      cmd: "bash cmd.sh update"
-      dir: "react_dev"
-    path: "react_dev/dist"
-    waitMillisecond: 1000 # default 100
-  - cmd: "bash cmd.sh build update"
-    path: "go_dev"
-    excludeDir:
-      - "go_dev/build"
-    excludeSuffix:
-      - "_test.go"
-      - "_test.go~"
-    waitMillisecond: 1000 # default 100
-  - path: "angular_dev"
-    initCmd: "bash cmd.sh watch"
-    excludeDir:
-      - "angular_dev"
-  - cmd:
-      cmd: "bash cmd.sh update"
-      dir: "angular_dev"
-    path: "angular_dev/dist"
-    waitMillisecond: 1000 # default 100
+global:
+  lifeCycle:
+    onStartWatch:
+      - "make up"
+    onAfterChange:
+      - cmd: "bash cmd.sh rmi"
+        dir: ""
+    onFinishWatch:
+      - "make down"
+watchTargets:
+  # spring
+  - path: "spring_dev/src/main"
+    lifeCycle:
+      onChange:
+        - cmd: "bash cmd.sh build update"
+          dir: "spring_dev"
+    option:
+      excludeDir:
+        - "spring_dev/src/main/generated"
+      waitMillisecond: 1000
+  # react
+  - path: 'react_dev'
+    lifeCycle:
+      onStartWatch:
+        - 'bash cmd.sh watch'
+    option:
+      excludeDir:
+        - "react_dev"
+      waitMillisecond: 1000 # default 100
+  - path: 'react_dev/dist'
+    lifeCycle:
+      onChange:
+        - cmd: "bash cmd.sh update"
+          dir: "react_dev"
+    option:
+      waitMillisecond: 1000 # default 100
+  # golang
+  - path: "go_dev"
+    lifeCycle:
+      onChange:
+        - "bash cmd.sh build update"
+    option:
+      excludeDir:
+        - "go_dev/build"
+      excludeSuffix:
+        - "_test.go"
+        - "_test.go~"
+      waitMillisecond: 1000 # default 100
+  # angular
+  - path: 'angular_dev'
+    lifeCycle:
+      onStartWatch:
+        - "bash cmd.sh watch"
+    option:
+      excludeDir:
+        - "angular_dev"
+  - path: "angular_dev/dist"
+    lifeCycle:
+      onChange:
+        - cmd: "bash cmd.sh update"
+          dir: "angular_dev"
+    option:
+      waitMillisecond: 1000 # default 100
