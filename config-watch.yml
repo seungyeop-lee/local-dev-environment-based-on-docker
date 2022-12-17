@@ -1,19 +1,19 @@
 global:
   lifeCycle:
     onStartWatch:
-      - "make up"
+      - "bash cmd.sh up"
     onAfterChange:
-      - cmd: "bash cmd.sh rmi"
-        dir: ""
+      - dir: ""
+        cmd: "bash cmd.sh rmi"
     onFinishWatch:
-      - "make down"
+      - "bash cmd.sh down"
 watchTargets:
   # spring
   - path: "spring_dev/src/main"
     lifeCycle:
       onChange:
-        - cmd: "bash cmd.sh build update"
-          dir: "spring_dev"
+        - dir: "spring_dev"
+          cmd: "bash cmd.sh build update"
     option:
       excludeDir:
         - "spring_dev/src/main/generated"
@@ -30,8 +30,8 @@ watchTargets:
   - path: 'react_dev/dist'
     lifeCycle:
       onChange:
-        - cmd: "bash cmd.sh update"
-          dir: "react_dev"
+        - dir: "react_dev"
+          cmd: "bash cmd.sh update"
     option:
       waitMillisecond: 1000 # default 100
   # golang

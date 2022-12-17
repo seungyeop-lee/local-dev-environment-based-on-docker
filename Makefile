@@ -26,7 +26,7 @@ endif
 
 .PHONY:init
 init:
-	(cd react_dev && ./cmd.sh init)
+	./cmd.sh init
 
 .PHONY:watch
 watch:
@@ -38,9 +38,6 @@ run:
 
 .PHONY:up
 up:
-	(cd spring_dev && ./cmd.sh build)
-	(cd react_dev && ./cmd.sh build)
-	(cd go_dev && ./cmd.sh build)
 	./cmd.sh up
 
 .PHONY:down

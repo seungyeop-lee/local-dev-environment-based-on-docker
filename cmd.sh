@@ -4,8 +4,15 @@ commands=$*
 docker_compose_dir="docker-compose"
 
 function runCommand() {
+  # init
+  if [ "$1" = "init" ]; then
+    (cd react_dev && bash cmd.sh init)
+
   # up
-  if [ "$1" = "up" ]; then
+  elif [ "$1" = "up" ]; then
+    (cd spring_dev && bash cmd.sh build)
+    (cd react_dev && bash cmd.sh build)
+    (cd go_dev && bash cmd.sh build)
     (cd $docker_compose_dir && docker compose up -d --build)
 
   # down
