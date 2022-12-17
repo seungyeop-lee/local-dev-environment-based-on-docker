@@ -34,7 +34,7 @@ watch:
 
 .PHONY:run
 run:
-	./directory-watcher/${DIRECTORY_WATCHER} -c config-once.yml
+	./directory-watcher/${DIRECTORY_WATCHER} -c config-run.yml
 
 .PHONY:up
 up:
